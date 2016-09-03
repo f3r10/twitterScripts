@@ -7,8 +7,8 @@ from rauth import OAuth1Service
 # Get a real consumer key & secret from https://dev.twitter.com/apps/new
 twitter = OAuth1Service(
     name='twitter',
-    consumer_key='ppB0z1Og0fLuY7BgyhA4CZF6D',
-    consumer_secret='zVsworsXDEJruStwrLFzL0vwLMAYa1lv71hYGPveNWrgCQuoKu',
+    consumer_key='#',
+    consumer_secret='#',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authorize',

@@ -44,14 +44,14 @@ twitterStream = Stream(auth, listener())
 server = couchdb.Server('http://localhost:5984/')
 try:
     #Si no existe la Base de datos la crea
-    db = server.create('quito_sur')
+    db = server.create('ecu911')
 except:
     #Caso contrario solo conectarse a la base existente
-    db = server['quito_sur']
+    db = server['ecu911']
     
 #Aqui se define el bounding box con los limites geograficos donde recolectar los tweets
 #twitterStream.filter(track=['pokemon'])
 QUITO_SUR = [-78.585205,-0.393391,-78.430023,-0.213546]
 ENTIDADES_PUBLICAS = ["ECU911Quito", "PoliciaEcuador", "BomberosQuito"]
 
-twitterStream.filter(locations=QUITO_SUR)  
+twitterStream.filter(follow=["ECU911Quito"])  

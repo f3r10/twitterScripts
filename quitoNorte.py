@@ -11,10 +11,10 @@ import json #Libreria para manejar archivos JSON
 
 ###Credenciales de la cuenta de Twitter########################
 #Poner aqui las credenciales de su cuenta privada, caso contrario la API bloqueara esta cuenta de ejemplo
-CONSUMER_KEY = "ppB0z1Og0fLuY7BgyhA4CZF6D"
-CONSUMER_SECRECT = "zVsworsXDEJruStwrLFzL0vwLMAYa1lv71hYGPveNWrgCQuoKu"
-ACCESS_TOKEN = "414709805-W003Fimha42AQCEUK8I3m76ECYPjpbrgwQKi7GhW"
-ACCESS_SECRECT = "4CMyBr4hFVTOntq2w7yBoGWCKxNiGJQzLpSpB2mkzGYIz"
+CONSUMER_KEY = "#"
+CONSUMER_SECRECT = "#"
+ACCESS_TOKEN = "#"
+ACCESS_SECRECT = "#"
 #####################################
 
 class listener(StreamListener):
