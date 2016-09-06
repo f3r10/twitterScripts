@@ -1,27 +1,36 @@
-# Curso BigData & Data Analytics by Handytec
-# Fecha: Marzo-2016
-# Descripcion: Programa que cosecha tweets desde la API de twitter usando tweepy
-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import couchdb #Libreria de CouchDB (requiere ser instalada primero)
 import tweepy
-from tweepy import Stream #tweepy es la libreria que trae tweets desde la API de Twitter (requiere ser instalada primero)
-from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
+from tweepy import Stream #tweepy es la libreria que trae tweets desde la API de Twitter (requiere ser instalada primero)
 import json #Libreria para manejar archivos JSON
-
 
 CONSUMER_KEY = "CONSUMER_KEY"
 CONSUMER_SECRECT = "CONSUMER_SECRECT"
 ACCESS_TOKEN = "ACCESS_TOKEN"
 ACCESS_SECRECT = "ACCESS_SECRECT"
 QUITO_CODE = 375732
-QUITO_SUR = [-78.585205,-0.393391,-78.430023,-0.213546]
 
 twitterKeys = "twitterKeys.json"
 with open(twitterKeys) as data_file:    
     keys = json.load(data_file)
 
 if (len(keys) == 4):
+    # OAuth process, using the keys and tokens
+    auth = tweepy.OAuthHandler(keys[CONSUMER_KEY], keys[CONSUMER_SECRECT])
+    auth.set_access_token(keys[ACCESS_TOKEN], keys[ACCESS_SECRECT])
+    api = tweepy.API(auth)
+    trends1 = api.trends_place(QUITO_CODE)
+
+    data = trends1[0] 
+    # grab the trends
+    trends = data['trends']
+    # grab the name from each trend
+    names = [trend['name'] for trend in trends]
+    # put all the names together with a ' ' separating them
+    trendsName = ','.join(names)
+
     class listener(StreamListener):
         
         def on_data(self, data):
@@ -40,25 +49,19 @@ if (len(keys) == 4):
         
         def on_error(self, status):
             print status
-            
-    auth = tweepy.OAuthHandler(keys[CONSUMER_KEY], keys[CONSUMER_SECRECT])
-    auth.set_access_token(keys[ACCESS_TOKEN], keys[ACCESS_SECRECT])
-    twitterStream = Stream(auth, listener())
+
 
     #Setear la URL del servidor de couchDB
-    server = couchdb.Server('http://localhost:5984/')
+    server = couchdb.Server('http://127.0.0.1:5984/')
     try:
         #Si no existe la Base de datos la crea
-        db = server.create('quito_sur')
+        db = server.create('topics')
     except:
         #Caso contrario solo conectarse a la base existente
-        db = server['quito_sur']
-        
-    #Aqui se define el bounding box con los limites geograficos donde recolectar los tweets
-    #twitterStream.filter(track=['pokemon'])
-    
+        db = server['topics']
 
-    twitterStream.filter(locations=QUITO_SUR)
-
+    twitterStream = Stream(auth, listener())
+    twitterStream.filter(track=[trendsName])
 else:
     print("Unable to read twitterKeys.json")
+
