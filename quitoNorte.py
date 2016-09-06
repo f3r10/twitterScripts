@@ -21,13 +21,12 @@ twitterKeys = "twitterKeys.json"
 with open(twitterKeys) as data_file:    
     keys = json.load(data_file)
 
-if (len(keys) == 4):
+if (len(keys) == 14):
     class listener(StreamListener):
         
         def on_data(self, data):
             dictTweet = json.loads(data)
             try:
-                print(dictTweet['text'])
                 dictTweet["_id"] = str(dictTweet['id'])
                 #Antes de guardar el documento puedes realizar parseo, limpieza y cierto analisis o filtrado de datos previo
                 #a guardar en documento en la base de datos
@@ -47,6 +46,7 @@ if (len(keys) == 4):
 
     #Setear la URL del servidor de couchDB
     server = couchdb.Server('http://localhost:5984/')
+    server.resource.credentials = (keys["COUCH_USER"], keys["COUCH_PASSWORD"])
     try:
         #Si no existe la Base de datos la crea
         db = server.create('quito_norte')
