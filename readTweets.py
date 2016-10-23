@@ -53,8 +53,9 @@ def readTweets(dbName):
 	
 
 
-readTweets("quito_sur")
-readTweets("quito_norte")
-readTweets("quito_centro")
+# readTweets("quito_sur")
+# readTweets("quito_norte")
+# readTweets("quito_centro")
+readTweets("topics")
 
 
