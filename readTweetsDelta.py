@@ -42,7 +42,6 @@ def readTweets(dbName):
 		if('place' in currentTweet):
 			if(currentTweet["place"]):
 				if(currentTweet["place"]["name"]):
-					print currentTweet["place"]["name"]
 					print idTweet
 					if(currentTweet["place"]["name"] == nombre):
 						print "from quito"
@@ -52,8 +51,8 @@ def readTweets(dbName):
 							currentTweet.pop('_rev', None)
 							currentTweet["score"] = score
 							try:
-								print currentTweet["place"]["name"]
 								dbClean.save(currentTweet)
+								print "Guardado " + "=> " + currentTweet["_id"]
 							except:
 								print "Error conflict rev"
 
