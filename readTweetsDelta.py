@@ -27,7 +27,8 @@ def readRedisIds(key):
 	return lastRedisList
 
 def readTweets(dbName):
-	serverInstance = initCouchInstance('http://localhost:8080/', keys["COUCH_USER"], keys["COUCH_PASSWORD"])
+	# serverInstance = initCouchInstance('http://localhost:8080/', keys["COUCH_USER"], keys["COUCH_PASSWORD"])
+	serverInstance = initCouchInstance('http://localhost:8080/')
 	db = serverInstance[dbName]
 
 	idTweetsList = readRedisIds(key_redis_base + dbName)

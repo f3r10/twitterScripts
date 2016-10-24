@@ -15,7 +15,7 @@ def initCouchInstance(url, user, password):
 
 
 def readTweets(dbName):
-	serverInstance = initCouchInstance('http://localhost:8080/', keys["COUCH_USER"], keys["COUCH_PASSWORD"])
+	serverInstance = initCouchInstance('http://localhost:8080/')
 	db = serverInstance[dbName]
 	idTweetsList = []
 	for id in db:

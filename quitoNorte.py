@@ -52,7 +52,7 @@ if (len(keys) == 14):
 
     #Setear la URL del servidor de couchDB
     server = couchdb.Server('http://localhost:8080/')
-    server.resource.credentials = (keys["COUCH_USER"], keys["COUCH_PASSWORD"])
+    # server.resource.credentials = (keys["COUCH_USER"], keys["COUCH_PASSWORD"])
     try:
         #Si no existe la Base de datos la crea
         db = server.create('quito_norte')
