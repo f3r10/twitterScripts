@@ -14,9 +14,9 @@ r = redis.StrictRedis(host='localhost', port=6379, db=0)
 with open(twitterKeys) as data_file:    
     keys = json.load(data_file)
 
-def initCouchInstance(url, user, password):
+def initCouchInstance(url):
 	server = couchdb.Server(url)
-	server.resource.credentials = (user, password)
+	# server.resource.credentials = (user, password)
 	return server
 
 def readRedisIds(key):

@@ -8,9 +8,8 @@ min_words=5
 with open(twitterKeys) as data_file:    
     keys = json.load(data_file)
 
-def initCouchInstance(url, user, password):
+def initCouchInstance(url):
 	server = couchdb.Server(url)
-	server.resource.credentials = (user, password)
 	return server
 
 
