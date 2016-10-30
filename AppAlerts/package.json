@@ -1,0 +1,23 @@
+{
+  "name": "big data grupo 6 ",
+  "version": "0.0.1",
+  "description": "show significant_terms twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "elasticsearch",
+    "significant_terms",
+    "kiban"
+  ],
+  "author": "frledesma@outlook.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "elasticsearch": "^12.0.1",
+    "express": "^4.13.3",
+    "request": "^2.76.0"
+  }
+}

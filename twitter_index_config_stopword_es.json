@@ -1,0 +1,1820 @@
+{
+  "settings": {
+    "index": {
+      "creation_date": "1477272554661",
+      "number_of_shards": "1",
+      "analysis": {
+        "analyzer": {
+          "my_analyzer": {
+            "type": "standard",
+            "stopwords": [
+              "la",
+              "en",
+              "de",
+              "y",
+              "a",
+              "los",
+              "https",
+              "t.co",
+              "al",
+              "me",
+              "el",
+              "que",
+              "para",
+              "and",
+              "las",
+              "con",
+              "follow",
+              "you",
+              "donde",
+              "es",
+              "no",
+              "pero",
+              "si",
+              "hay",
+              "lo",
+              "se",
+              "ni",
+              "q",
+              "un",
+              "una",
+              "esto",
+              "esta",
+              "eso",
+              "esa",
+              "su",
+              "un",
+              "poco",
+              "del",
+              "mi",
+              "te",
+              "por",
+              "todo",
+              "mas",
+              "yo",
+              "1",
+              "ya",
+              "0",
+              "tu",
+              "son",
+              "ese",
+              "tengo",
+              "algo",
+              "muy",
+              "mis",
+              "hasta",
+              "estas",
+              "sé",
+              "misma",
+              "poner",
+              "hasta",
+              "sabe"
+              "alguien",
+              "algo",
+              "después"
+            ]
+          }
+        }
+      },
+      "uuid": "dX32R47ySCGGZaD-khCFUg",
+      "version": {
+        "created": "1070599"
+      },
+      "number_of_replicas": "0"
+    }
+  },
+  "mappings": {
+    "tweet": {
+      "properties": {
+        "extended_tweet": {
+          "properties": {
+            "extended_entities": {
+              "properties": {
+                "media": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "source_user_id": {
+                      "type": "long"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "media_url": {
+                      "type": "string"
+                    },
+                    "source_status_id": {
+                      "type": "long"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "sizes": {
+                      "properties": {
+                        "small": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "large": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "thumb": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "medium": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "source_status_id_str": {
+                      "type": "string"
+                    },
+                    "media_url_https": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    },
+                    "source_user_id_str": {
+                      "type": "string"
+                    },
+                    "video_info": {
+                      "properties": {
+                        "aspect_ratio": {
+                          "type": "long"
+                        },
+                        "duration_millis": {
+                          "type": "long"
+                        },
+                        "variants": {
+                          "properties": {
+                            "content_type": {
+                              "type": "string"
+                            },
+                            "bitrate": {
+                              "type": "long"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "entities": {
+              "properties": {
+                "urls": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "hashtags": {
+                  "properties": {
+                    "indices": {
+                      "type": "long"
+                    },
+                    "text": {
+                      "type": "string",
+                      "analyzer" : "my_analyzer"
+                    }
+                  }
+                },
+                "media": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "source_user_id": {
+                      "type": "long"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "media_url": {
+                      "type": "string"
+                    },
+                    "source_status_id": {
+                      "type": "long"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "sizes": {
+                      "properties": {
+                        "small": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "large": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "thumb": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "medium": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "source_status_id_str": {
+                      "type": "string"
+                    },
+                    "media_url_https": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    },
+                    "source_user_id_str": {
+                      "type": "string"
+                    },
+                    "video_info": {
+                      "properties": {
+                        "aspect_ratio": {
+                          "type": "long"
+                        },
+                        "duration_millis": {
+                          "type": "long"
+                        },
+                        "variants": {
+                          "properties": {
+                            "content_type": {
+                              "type": "string"
+                            },
+                            "bitrate": {
+                              "type": "long"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "user_mentions": {
+                  "properties": {
+                    "indices": {
+                      "type": "long"
+                    },
+                    "screen_name": {
+                      "type": "string"
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    }
+                  }
+                }
+              }
+            },
+            "full_text": {
+              "type": "string"
+            },
+            "display_text_range": {
+              "type": "long"
+            }
+          }
+        },
+        "extended_entities": {
+          "properties": {
+            "media": {
+              "properties": {
+                "display_url": {
+                  "type": "string"
+                },
+                "source_user_id": {
+                  "type": "long"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "media_url": {
+                  "type": "string"
+                },
+                "source_status_id": {
+                  "index": "no",
+                  "type": "long"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "long"
+                },
+                "sizes": {
+                  "properties": {
+                    "small": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "large": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "thumb": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "medium": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "expanded_url": {
+                  "type": "string"
+                },
+                "source_status_id_str": {
+                  "type": "string"
+                },
+                "media_url_https": {
+                  "index": "no",
+                  "type": "string"
+                },
+                "id": {
+                  "index": "no",
+                  "type": "long"
+                },
+                "source_user_id_str": {
+                  "type": "string"
+                },
+                "video_info": {
+                  "properties": {
+                    "aspect_ratio": {
+                      "index": "no",
+                      "type": "long"
+                    },
+                    "duration_millis": {
+                      "type": "long"
+                    },
+                    "variants": {
+                      "properties": {
+                        "content_type": {
+                          "index": "no",
+                          "type": "string"
+                        },
+                        "bitrate": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "url": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "quoted_status": {
+          "properties": {
+            "extended_tweet": {
+              "properties": {
+                "extended_entities": {
+                  "properties": {
+                    "media": {
+                      "properties": {
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "source_user_id": {
+                          "type": "long"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "source_status_id": {
+                          "type": "long"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "long"
+                        },
+                        "sizes": {
+                          "properties": {
+                            "small": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "large": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "thumb": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "medium": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "source_status_id_str": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "long"
+                        },
+                        "source_user_id_str": {
+                          "type": "string"
+                        },
+                        "video_info": {
+                          "properties": {
+                            "aspect_ratio": {
+                              "type": "long"
+                            },
+                            "duration_millis": {
+                              "type": "long"
+                            },
+                            "variants": {
+                              "properties": {
+                                "content_type": {
+                                  "type": "string"
+                                },
+                                "bitrate": {
+                                  "type": "long"
+                                },
+                                "url": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "entities": {
+                  "properties": {
+                    "urls": {
+                      "properties": {
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "long"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "hashtags": {
+                      "properties": {
+                        "indices": {
+                          "type": "long"
+                        },
+                        "text": {
+                          "type": "string",
+                          "analyzer" : "my_analyzer"
+                        }
+                      }
+                    },
+                    "media": {
+                      "properties": {
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "source_user_id": {
+                          "type": "long"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "source_status_id": {
+                          "type": "long"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "long"
+                        },
+                        "sizes": {
+                          "properties": {
+                            "small": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "large": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "thumb": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "medium": {
+                              "properties": {
+                                "w": {
+                                  "type": "long"
+                                },
+                                "h": {
+                                  "type": "long"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "source_status_id_str": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "long"
+                        },
+                        "source_user_id_str": {
+                          "type": "string"
+                        },
+                        "video_info": {
+                          "properties": {
+                            "aspect_ratio": {
+                              "type": "long"
+                            },
+                            "duration_millis": {
+                              "type": "long"
+                            },
+                            "variants": {
+                              "properties": {
+                                "content_type": {
+                                  "type": "string"
+                                },
+                                "bitrate": {
+                                  "type": "long"
+                                },
+                                "url": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "user_mentions": {
+                      "properties": {
+                        "indices": {
+                          "type": "long"
+                        },
+                        "screen_name": {
+                          "type": "string"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "long"
+                        }
+                      }
+                    }
+                  }
+                },
+                "full_text": {
+                  "type": "string"
+                },
+                "display_text_range": {
+                  "type": "long"
+                }
+              }
+            },
+            "extended_entities": {
+              "properties": {
+                "media": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "source_user_id": {
+                      "type": "long"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "media_url": {
+                      "type": "string"
+                    },
+                    "source_status_id": {
+                      "type": "long"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "sizes": {
+                      "properties": {
+                        "small": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "large": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "thumb": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "medium": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "source_status_id_str": {
+                      "type": "string"
+                    },
+                    "media_url_https": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    },
+                    "source_user_id_str": {
+                      "type": "string"
+                    },
+                    "video_info": {
+                      "properties": {
+                        "aspect_ratio": {
+                          "type": "long"
+                        },
+                        "duration_millis": {
+                          "type": "long"
+                        },
+                        "variants": {
+                          "properties": {
+                            "content_type": {
+                              "type": "string"
+                            },
+                            "bitrate": {
+                              "type": "long"
+                            },
+                            "url": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "in_reply_to_status_id_str": {
+              "type": "string"
+            },
+            "in_reply_to_status_id": {
+              "type": "long"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "in_reply_to_user_id_str": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "quoted_status_id": {
+              "type": "long"
+            },
+            "retweet_count": {
+              "type": "long"
+            },
+            "retweeted": {
+              "type": "boolean"
+            },
+            "geo": {
+              "properties": {
+                "coordinates": {
+                  "type": "double"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "filter_level": {
+              "type": "string"
+            },
+            "in_reply_to_screen_name": {
+              "type": "string"
+            },
+            "is_quote_status": {
+              "type": "boolean"
+            },
+            "id_str": {
+              "type": "string"
+            },
+            "in_reply_to_user_id": {
+              "type": "long"
+            },
+            "favorite_count": {
+              "type": "long"
+            },
+            "id": {
+              "type": "long"
+            },
+            "place": {
+              "properties": {
+                "country": {
+                  "type": "string"
+                },
+                "country_code": {
+                  "type": "string"
+                },
+                "full_name": {
+                  "type": "string"
+                },
+                "bounding_box": {
+                  "properties": {
+                    "coordinates": {
+                      "type": "double"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "place_type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "attributes": {
+                  "type": "object"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "text": {
+              "type": "string",
+              "analyzer" : "my_analyzer"
+            },
+            "lang": {
+              "type": "string"
+            },
+            "favorited": {
+              "type": "boolean"
+            },
+            "possibly_sensitive": {
+              "type": "boolean"
+            },
+            "coordinates": {
+              "properties": {
+                "coordinates": {
+                  "type": "double"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "truncated": {
+              "type": "boolean"
+            },
+            "entities": {
+              "properties": {
+                "urls": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "hashtags": {
+                  "properties": {
+                    "indices": {
+                      "type": "long"
+                    },
+                    "text": {
+                      "type": "string",
+                      "analyzer" : "my_analyzer"
+                    }
+                  }
+                },
+                "media": {
+                  "properties": {
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "source_user_id": {
+                      "type": "long"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "media_url": {
+                      "type": "string"
+                    },
+                    "source_status_id": {
+                      "type": "long"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "long"
+                    },
+                    "sizes": {
+                      "properties": {
+                        "small": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "large": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "thumb": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "medium": {
+                          "properties": {
+                            "w": {
+                              "type": "long"
+                            },
+                            "h": {
+                              "type": "long"
+                            },
+                            "resize": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "source_status_id_str": {
+                      "type": "string"
+                    },
+                    "media_url_https": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    },
+                    "source_user_id_str": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "user_mentions": {
+                  "properties": {
+                    "indices": {
+                      "type": "long"
+                    },
+                    "screen_name": {
+                      "type": "string"
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "long"
+                    }
+                  }
+                }
+              }
+            },
+            "display_text_range": {
+              "type": "long"
+            },
+            "quoted_status_id_str": {
+              "type": "string"
+            },
+            "scopes": {
+              "properties": {
+                "followers": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "utc_offset": {
+                  "type": "long"
+                },
+                "friends_count": {
+                  "type": "long"
+                },
+                "profile_image_url_https": {
+                  "type": "string"
+                },
+                "listed_count": {
+                  "type": "long"
+                },
+                "profile_background_image_url": {
+                  "type": "string"
+                },
+                "default_profile_image": {
+                  "type": "boolean"
+                },
+                "favourites_count": {
+                  "type": "long"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "is_translator": {
+                  "type": "boolean"
+                },
+                "profile_background_image_url_https": {
+                  "type": "string"
+                },
+                "protected": {
+                  "type": "boolean"
+                },
+                "screen_name": {
+                  "type": "string"
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "profile_link_color": {
+                  "type": "string"
+                },
+                "geo_enabled": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "long"
+                },
+                "profile_background_color": {
+                  "type": "string"
+                },
+                "lang": {
+                  "type": "string"
+                },
+                "profile_sidebar_border_color": {
+                  "type": "string"
+                },
+                "profile_text_color": {
+                  "type": "string"
+                },
+                "verified": {
+                  "type": "boolean"
+                },
+                "profile_image_url": {
+                  "type": "string"
+                },
+                "time_zone": {
+                  "type": "string"
+                },
+                "contributors_enabled": {
+                  "type": "boolean"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "profile_background_tile": {
+                  "type": "boolean"
+                },
+                "profile_banner_url": {
+                  "type": "string"
+                },
+                "statuses_count": {
+                  "type": "long"
+                },
+                "default_profile": {
+                  "type": "boolean"
+                },
+                "followers_count": {
+                  "type": "long"
+                },
+                "profile_use_background_image": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "profile_sidebar_fill_color": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "in_reply_to_status_id_str": {
+          "index": "no",
+          "type": "string"
+        },
+        "in_reply_to_status_id": {
+          "index": "no",
+          "type": "long"
+        },
+        "_rev": {
+          "type": "string"
+        },
+        "created_at": {
+          "format": "EE MMM d HH:mm:ss Z yyyy||dd/MM/yyyy||dd-MM-yyyy||date_optional_time",
+          "type": "date"
+        },
+        "in_reply_to_user_id_str": {
+          "index": "no",
+          "type": "string"
+        },
+        "source": {
+          "index": "no",
+          "type": "string"
+        },
+        "quoted_status_id": {
+          "type": "long"
+        },
+        "retweet_count": {
+          "type": "long"
+        },
+        "retweeted": {
+          "type": "boolean"
+        },
+        "geo": {
+          "properties": {
+            "coordinates": {
+              "index": "no",
+              "type": "double"
+            },
+            "type": {
+              "index": "no",
+              "type": "string"
+            }
+          }
+        },
+        "score": {
+          "type": "string"
+        },
+        "filter_level": {
+          "index": "no",
+          "type": "string"
+        },
+        "in_reply_to_screen_name": {
+          "index": "no",
+          "type": "string"
+        },
+        "is_quote_status": {
+          "type": "boolean"
+        },
+        "id_str": {
+          "type": "string"
+        },
+        "in_reply_to_user_id": {
+          "index": "no",
+          "type": "long"
+        },
+        "favorite_count": {
+          "type": "long"
+        },
+        "id": {
+          "type": "long"
+        },
+        "place": {
+          "properties": {
+            "country": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "country_code": {
+              "type": "string"
+            },
+            "full_name": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "bounding_box": {
+              "properties": {
+                "coordinates": {
+                  "type": "double"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            },
+            "place_type": {
+              "type": "string"
+            },
+            "name": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "attributes": {
+              "type": "object"
+            },
+            "id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        },
+        "text": {
+          "type": "string",
+          "analyzer" : "my_analyzer"
+        },
+        "lang": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "favorited": {
+          "type": "boolean"
+        },
+        "possibly_sensitive": {
+          "index": "no",
+          "type": "boolean"
+        },
+        "coordinates": {
+          "properties": {
+            "coordinates": {
+              "type": "geo_point"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "truncated": {
+          "index": "no",
+          "type": "boolean"
+        },
+        "timestamp_ms": {
+          "format": "dateOptionalTime",
+          "type": "date"
+        },
+        "entities": {
+          "properties": {
+            "urls": {
+              "properties": {
+                "display_url": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "long"
+                },
+                "expanded_url": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            },
+            "hashtags": {
+              "properties": {
+                "indices": {
+                  "type": "long"
+                },
+                "text": {
+                  "type": "string",
+                  "analyzer" : "my_analyzer"
+                }
+              }
+            },
+            "media": {
+              "properties": {
+                "display_url": {
+                  "type": "string"
+                },
+                "source_user_id": {
+                  "type": "long"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "media_url": {
+                  "type": "string"
+                },
+                "source_status_id": {
+                  "index": "no",
+                  "type": "long"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "long"
+                },
+                "sizes": {
+                  "properties": {
+                    "small": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "large": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "thumb": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "medium": {
+                      "properties": {
+                        "w": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "h": {
+                          "index": "no",
+                          "type": "long"
+                        },
+                        "resize": {
+                          "index": "no",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "expanded_url": {
+                  "type": "string"
+                },
+                "source_status_id_str": {
+                  "index": "no",
+                  "type": "string"
+                },
+                "media_url_https": {
+                  "index": "no",
+                  "type": "string"
+                },
+                "id": {
+                  "type": "long"
+                },
+                "source_user_id_str": {
+                  "type": "string"
+                }
+              }
+            },
+            "user_mentions": {
+              "properties": {
+                "indices": {
+                  "type": "long"
+                },
+                "screen_name": {
+                  "type": "string"
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "id": {
+                  "index": "no",
+                  "type": "long"
+                }
+              }
+            }
+          }
+        },
+        "display_text_range": {
+          "type": "long"
+        },
+        "quoted_status_id_str": {
+          "type": "string"
+        },
+        "user": {
+          "properties": {
+            "utc_offset": {
+              "type": "long"
+            },
+            "friends_count": {
+              "type": "long"
+            },
+            "profile_image_url_https": {
+              "index": "no",
+              "type": "string"
+            },
+            "listed_count": {
+              "index": "no",
+              "type": "long"
+            },
+            "profile_background_image_url": {
+              "index": "no",
+              "type": "string"
+            },
+            "default_profile_image": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "favourites_count": {
+              "index": "no",
+              "type": "long"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "is_translator": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "profile_background_image_url_https": {
+              "index": "no",
+              "type": "string"
+            },
+            "protected": {
+              "type": "boolean"
+            },
+            "screen_name": {
+              "type": "string"
+            },
+            "id_str": {
+              "type": "string"
+            },
+            "profile_link_color": {
+              "index": "no",
+              "type": "string"
+            },
+            "geo_enabled": {
+              "type": "boolean"
+            },
+            "id": {
+              "index": "no",
+              "type": "long"
+            },
+            "profile_background_color": {
+              "index": "no",
+              "type": "string"
+            },
+            "lang": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "profile_sidebar_border_color": {
+              "index": "no",
+              "type": "string"
+            },
+            "profile_text_color": {
+              "index": "no",
+              "type": "string"
+            },
+            "verified": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "profile_image_url": {
+              "type": "string"
+            },
+            "time_zone": {
+              "type": "string"
+            },
+            "contributors_enabled": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "url": {
+              "index": "no",
+              "type": "string"
+            },
+            "profile_background_tile": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "profile_banner_url": {
+              "index": "no",
+              "type": "string"
+            },
+            "statuses_count": {
+              "type": "long"
+            },
+            "default_profile": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "followers_count": {
+              "type": "long"
+            },
+            "profile_use_background_image": {
+              "index": "no",
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string"
+            },
+            "location": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "profile_sidebar_fill_color": {
+              "index": "no",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

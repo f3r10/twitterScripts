@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="AngularAlerts">
+
+<head>
+    <title>AngularAlerts</title>
+    <link type="text/css" rel="stylesheet" href="styles/lib/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="styles/AngularAlerts.css">
+    <script src="scripts/lib/angular.js"></script>
+    <script src="scripts/lib/angular-messages.js"></script>
+    <script src="scripts/AngularAlerts.js"></script>
+    <script src="scripts/controller/AlertsController.js"></script>
+</head>
+
+<body>
+
+<span>Grupo 6</span>
+
+    
+
+    <div class="container">
+        <div class="row">
+            <iframe src="http://localhost:5601/#/dashboard/test-dash?embed&_g=(refreshInterval:(display:Off,pause:!f,section:0,value:0),time:(from:now%2FM,mode:quick,to:now%2FM))&_a=(filters:!(),panels:!((col:7,id:heat-map-top-1-topics,row:1,size_x:6,size_y:3,type:visualization),(col:1,id:Top-10-hashtags,row:1,size_x:6,size_y:3,type:visualization),(col:1,id:filter-st,row:4,size_x:6,size_y:3,type:visualization),(col:7,id:geobyfilters,row:4,size_x:6,size_y:3,type:visualization)),query:(query_string:(analyze_wildcard:!t,query:'*')),title:'test%20dash')" height="600" width="800"></iframe>
+        </div>
+    </div>
+
+    <div ng-controller="AlertsController as storeCtrl" class="container">
+        <div class="row">
+            <h1>Filtro especifico</h1>
+            <span>Palabras de filtro: {{ storeCtrl.getFilterKeyWords()}}</span><br>
+            <button class="btn btn-primaty"ng-click="storeCtrl.clickElasticsearch()"> Obtener datos</button>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Palabra clave</th>
+                    <th>Ultimo conteo</th>
+                    <th>Nuevo conteo</th>
+                    <th>Diferencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="rows in storeCtrl.initialKeyWords | orderBy:'-doc_count'" >
+                      <td ng-repeat="subject in rows ">
+                        <span class="">{{subject}}</span>
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <h1>General </h1>
+            <button class="btn btn-primaty" ng-click="storeCtrl.getGeneralKeyWords()"> Obtener datos</button>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Palabra clave</th>
+                    <th>Ultimo conteo</th>
+                    <th>Nuevo conteo</th>
+                    <th>Diferencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="rows in storeCtrl.generalKeyWords | orderBy:'-doc_count'" >
+                      <td ng-repeat="subject in rows">
+                        <span class="">{{subject}}</span>
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
+    
+    
+</body>
+
+</html>

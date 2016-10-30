@@ -1,0 +1,13 @@
+.ng-submitted .ng-invalid.ng-pristine,
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+
+.ng-submitted .ng-valid.ng-pristine,
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+
+.abs-error {
+    color: red;
+}
